@@ -17,6 +17,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
         ],
         denormalizationContext: ['groups' => ['USER_ADD']],
         processor: UserProcessor::class
+
     ),
 
 ])]
