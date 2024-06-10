@@ -1,0 +1,16 @@
+c72923,::1,GET,https://localhost:8000/api/login,1717751532,9eb2a8,404,request
+9eb2a8,::1,POST,https://localhost:8000/api/login,1717751532,,404,request
+a5c162,::1,GET,https://localhost:8000/api/login,1717751704,ad1cfd,400,request
+ad1cfd,::1,POST,https://localhost:8000/api/login,1717751704,,400,request
+0251a3,::1,POST,https://localhost:8000/api/login,1717751730,,200,request
+b3634a,::1,POST,https://localhost:8000/api/login,1717751823,,200,request
+7a8e6a,::1,POST,https://localhost:8000/api/login,1717752982,,200,request
+a2b39f,::1,POST,https://localhost:8000/api/login,1717752998,,200,request
+025c0a,::1,GET,https://localhost:8000/api,1717753051,,401,request
+42cca3,::1,GET,https://localhost:8000/favicon.ico,1717753061,70f6f4,404,request
+70f6f4,::1,GET,https://localhost:8000/favicon.ico,1717753061,,404,request
+baf26c,::1,GET,https://localhost:8000/api,1717753215,,200,request
+b2cc20,::1,POST,https://localhost:8000/api/utilisateurs,1717753462,,401,request
+9f74f4,::1,POST,https://localhost:8000/api/utilisateurs,1717753485,,401,request
+05c6bf,::1,POST,https://localhost:8000/api/utilisateurs,1717753517,,201,request
+68db68,::1,POST,https://localhost:8000/api/login,1717753899,,401,request
