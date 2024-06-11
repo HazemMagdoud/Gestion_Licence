@@ -3,20 +3,34 @@
 namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\Post;
 use App\Processor\UserProcessor;
 use App\Repository\UtilisateurRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 #[ApiResource (operations: [
-    new Post(
+   new Post(
+       uriTemplate: '/main/utilisateurs' ,
         openapiContext: [
             'summary' => 'Create user',
             'description' => 'Création d\'un utilisateur',
         ],
-        denormalizationContext: ['groups' => ['USER_ADD']],
-        processor: UserProcessor::class
+       denormalizationContext: ['groups' => ['USER_ADD']],
+       processor: UserProcessor::class
+
+  ),
+
+    new GetCollection(
+        uriTemplate: '/main/societe/utilisateurs',
+        openapiContext: [
+            'summary' => 'Get user list',
+            'description' => '',
+        ],
+        normalizationContext: ['groups' => ['utilisateur_read:list']],denormalizationContext: ['groups' => ['utilisateur_read:list']]
 
     ),
 
@@ -30,31 +44,38 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['utilisateur_read:list'])]
     #
     private ?int $id = null;
 
     #[ORM\Column(length: 180, unique: true)]
+    #[Groups(['utilisateur_read:list'])]
     private ?string $email = null;
 
     #[ORM\Column]
+    #[Groups(['utilisateur_read:list'])]
     private array $roles = [];
 
     /**
      * @var string The hashed password
      */
     #[ORM\Column]
+    #[Groups(['utilisateur_read:list'])]
     private ?string $password = null;
 
     #[ORM\Column(length: 70)]
+    #[Groups(['utilisateur_read:list'])]
     private ?string $nom = null;
 
 
 
     #[ORM\Column(length: 15, nullable: true)]
+    #[Groups(['utilisateur_read:list'])]
     private ?string $telephone = null;
 
 
     #[ORM\Column(length: 15, nullable: true)]
+    #[Groups(['utilisateur_read:list'])]
     private ?string $portable = null;
 
 
